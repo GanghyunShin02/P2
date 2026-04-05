@@ -1,18 +1,18 @@
 ---
 title: Ch1. 코딩환경과 입출력
 format: 
-  revealjs
+  revealjs:
     theme: default
 ---
 
 ## 1. 코딩환경
 
-* Python으로 코딩을 하기 위한 환경
-** Colab
-** Jupyter lab
-** Visual Studio Code
-** IDLE
-** etc..
+- Python으로 코딩을 하기 위한 환경
+  --Colab
+  --Jupyter lab
+  --Visual Studio Code
+  --IDLE
+  --etc..
 
 * 각각의 장단점이 있으므로 목적에 맞게 사용..
 
