@@ -76,6 +76,9 @@ print(1,type(1))
 print(1/2,type(1/2))
 print(-1,type(-1))
 ```
+- 더하기는 +, 빼기는 -, 곱하기는 *, 나누기는 /, 나머지는 %로 씁니다.
+- ex: 10%3==1
+
 
 - 문자형(String)
 
@@ -135,6 +138,8 @@ print(tup,type(tup))
 ```
 
 - 변수선언에 사용하는 "=" 기호는 수학에서의 등호와 조금 의미가 다릅니다.
+- 수학에서와 같은 등호는 "=="으로 등호를 두개 붙여씁니다.
+- "x=1" 은 x라는 변수에 1이라는 값을 저장하라는 의미입니다.
 - 스트링을 제외하고는 따로 표시해줄필요가 없습니다.
 
 ---
@@ -151,4 +156,123 @@ print(tup,type(tup))
 i=input()
 print(i)
 ```
+
+---
+
+## 반복문
+
+- for문과 while문 두 종류가 있습니다.
+- 주로 for문을 씁니다.
+
+---
+
+## for문
+- for loop라고 합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(3):
+   print(i)
+```
+
+- i가 range(3) 범위에 있는 만큼 반복하라는 명령입니다.
+- range(3)은 3을 포함하지 않는 0,1,2 까지의 범위입니다.
+
+---
+
+## while문
+- while loop라고합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+i=0
+while(i<3): 
+  print(i)
+  i+=1
+```
+- while(조건) 괄호안의 조건을 만족하면 loop합니다.
+- i+=1의 의미는 i=i+1 이라는 의미이며, -=,*=,/= 모두 사용가능합니다.
+
+-while loop는 for loop에 비해 변수를 복잡하게 통제해야합니다.
+
+---
+
+## 반복문의 중첩
+- 반복문은 중첩해서 사용할수 있습니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(3):
+ for j in range(2):
+    print('i는',i,'j는',j)
+```
+- 관례적으로 i,j,k 순으로 씁니다.
+
+---
+
+- 대표적인 예제로 별찍기 문제가 있습니다.
+
+```{python}
+#| echo: true
+#| outut: true
+#| warning: false
+for i in range(5):
+ for j in range(i+1):
+  print('*',end=" ")
+ print(" ")
+```
+
+---
+
+## 조건문
+
+
+- if문,elif문,else문이 있습니다.
+- 내가 원하는 조건울 만족할때만 실행할수 있게합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(5):
+ if i==0: print('i가 0이면',i)
+ elif i<2: print('i가 0이 아니고 2보다 작으면',i)
+ else: print('0도아니고 2보다 작지도않으면',i)
+```
+
+- if는 조건을 만족하는지 묻습니다.
+- elif (else if) 위의 if문의 조건을 만족하지 않았을때 묻습니다.
+- if 문도, elif 문도 통과하지않았다면 나머지를 실행합니다.
+- if문만을 사용한다면 매 루프마다 조건을 만족하는지 묻는 형상이됩니다. 
+이는 코드의 처리능력을 심각하게 낮추기때문에 elif, else문을 자주 사용합시다.
+
+---
+
+```{python}
+#| echo: true
+#| output: false
+#| warning: false
+for i in range(5):
+ if i==0: print('i가 0이면',i)
+ if i<2: print('i가 0이 아니고 2보다 작으면',i)
+ if i<5: print('0도아니고 2보다 작지도않으면',i)
+```
+
+- 위 루프에서 i가 0이라고 생각해봅시다. 
+i가 0이므로 2행의 명령이 실행됩니다.
+그후 i가 2보다 작은지 판단합니다. 2보다 작으므로 
+
+
+
+
+
+
+
+
 
