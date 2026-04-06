@@ -76,8 +76,55 @@ print(1,type(1))
 print(1/2,type(1/2))
 print(-1,type(-1))
 ```
+
+---
+
+## 연산자
 - 더하기는 +, 빼기는 -, 곱하기는 *, 나누기는 /, 나머지는 %로 씁니다.
 - ex: 10%3==1
+
+- i=i+1을 i+=1로 쓸수있습니다. -,*,/,% 모두 가능합니다.
+
+---
+
+## 논리연산자
+
+- And 연산자 '&'. Python에서는 and 라고 써도 기능합니다.
+ - True & True = True  
+True & False = False  
+False & True = False  
+False & False = False  
+
+- 참을 1로, 거짓을 0으로 생각하고 곱셉을 연상하면 쉽습니다. 
+- a%2==0 & a%3==0 을 만족하는 a는 2와 3의 공배수만입니다.
+
+---
+
+## 논리연산자
+
+- Or 연산자 '|'. 주로 엔터키 위에있는 역슬래쉬( `\` ,₩)에 쉬프트를 누르고 입력할수있습니다.  
+역슬래쉬는 종종 쓸일이 있으니 기억해둡시다.  
+역시 or 이라고만 써도 기능합니다.
+
+- True | True = True  
+True | False = True  
+False | True = True  
+False | False = False
+
+- 덧셈을 연상하면 쉽습니다.
+- a%2==0 or a%3==0 을 만족하는 a는 2의 배수와 3의 배수입니다.
+
+---
+
+## 논리연산자
+
+- not. 부정입니다. 주로 '!',또는 '~' 이라고 씁니다.
+- ! True = False  
+!False = True  
+
+- a != 1 이면 a는 1이 아닌 모든 수입니다.
+
+---
 
 
 - 문자형(String)
@@ -242,35 +289,114 @@ for i in range(5):
 #| warning: false
 for i in range(5):
  if i==0: print('i가 0이면',i)
- elif i<2: print('i가 0이 아니고 2보다 작으면',i)
- else: print('0도아니고 2보다 작지도않으면',i)
+ elif i==1: print('i가 1이면',i)
+ elif i==2: print('i가 3이면',i)
+ elif i==3: print('i가 4이면',i)
+ else: print('i가 4이면',i)
 ```
 
 - if는 조건을 만족하는지 묻습니다.
 - elif (else if) 위의 if문의 조건을 만족하지 않았을때 묻습니다.
 - if 문도, elif 문도 통과하지않았다면 나머지를 실행합니다.
-- if문만을 사용한다면 매 루프마다 조건을 만족하는지 묻는 형상이됩니다. 
-이는 코드의 처리능력을 심각하게 낮추기때문에 elif, else문을 자주 사용합시다.
 
 ---
 
 ```{python}
 #| echo: true
-#| output: false
+#| output: true
 #| warning: false
 for i in range(5):
  if i==0: print('i가 0이면',i)
- if i<2: print('i가 0이 아니고 2보다 작으면',i)
- if i<5: print('0도아니고 2보다 작지도않으면',i)
+ if i==1: print('i가 1이면',i)
+ if i==2: print('i가 2이면',i)
+ if i==3: print('i가 3이면',i)
+ if i==4: print('i가 4이면',i)
 ```
 
 - 위 루프에서 i가 0이라고 생각해봅시다. 
 i가 0이므로 2행의 명령이 실행됩니다.
-그후 i가 2보다 작은지 판단합니다. 2보다 작으므로 
+그후 i가 1인지 판단합니다. 1이 아니므로 실행되지않습니다.
+다시 i가 2인지 판단합니다.......
+
+- 이렇게 if문으로만 코딩을하면 루프안의 모든 조건문에서 판단을 해야하므로 
+굉장히 비효율적으로 구동됩니다.
 
 
+---
 
+## 함수
 
+- 코드내에서 자주 쓰는 논리가 있을때 함수로 만들어 놓습니다.  
+코드가 길어질때에는 필수적이라고 할 수 있습니다.
+
+```{python}
+#| echo: True
+#| output: True
+#| warning: False
+def plus(x,y):
+ return x+y
+
+def minus(x,y):
+ print(x-y)
+
+product=lambda x,y : x*y
+
+print(plus(1,2))
+minus(1,2)
+print(product(1,2))
+```
+
+- def 함수이름 (변수):  
+return  
+의 형식으로 씁니다. 값을 반환하지않으면 return하지 않아도 됩니다.
+
+---
+
+## 연습문제
+
+- 피라미드 별찍기를 해봅시다..
+
+```{python}
+#| echo: False
+#| output: True
+#| warning: False
+
+n=5
+for i in range(n):
+ for j in range(4-i):
+  print(' ',end='')
+ for k in range(2*i+1):
+  print('*',end='')
+ print('\n')
+```
+
+---
+
+## 마치며..
+
+-Do it! 점프 투 파이썬을 참조해서 작성했습니다.  
+이 프레젠테이션에 소개되지않은 여러 디테일들을 배울 수 있습니다.
+
+```{python}
+#| echo: True
+#| output: True
+#| warning: False
+
+#print('Hello, World!')
+'''
+abcdefg
+hijklmn
+'''
+print(1+1)
+```
+
+- #과 ''' ... ''' 로 주석을 남길수 있습니다.  
+긴 코드에서 주석은 필수입니다.
+
+- 작성한 코드를 기록해두는것도 중요합니다.  
+주로 github를 사용합니다.
+
+---
 
 
 
