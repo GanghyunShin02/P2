@@ -1,0 +1,404 @@
+---
+title: " Ch1. 코딩환경과 입출력"
+format: 
+  revealjs:
+    theme: default
+---
+
+## 1. 코딩환경
+
+- Python의 여러 편집기
+  - Colab ![co](https://i.namu.wiki/i/KV3Fi3hmllmRl-OkPfFbHSNM7rKBupH4NRDLBlnNxhZBZzClOx-Zg-SuKO7LNhATxU8b34COD4V_s2aw0DVLmA.svg){width=10% fig-align="center"}
+  - Jupyter lab ![ju](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg)
+
+  - Visual Studio Code ![sex](https://i.namu.wiki/i/3DwwkLvORlKrS9HRfoqLaQsJ4MupYiKMr9k6n07nyUZkRAduzUhedbM278wtxnQKgWa0elhea-k_hVVkk5J1g_WQKlN-D1ioYXyKvmziwYbVWXWpBGxKQTj4iPtmnEBpKb0hj9u5yRqLohMs2vH-Sg.svg){width=5%}
+  - IDLE ![ss](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg){width=5%}
+  - etc..
+
+:::{.smaller}
+* 각각의 장단점이 있으므로 목적에 맞게 사용..
+:::
+
+
+---
+
+## 1. 코딩환경
+
+### Colab
+
+- 우리는 Colab을 사용할겁니다.
+  - 설치할필요없음
+  - Google 계정, 인터넷만 있으면 사용가능
+  - 웹에서 구동하므로 컴퓨터사양, 버전을 동일하게 가져갈수있다.
+
+---
+
+## 1. 코딩환경
+
+### Colab
+* Google에 'Colab' 검색후 들어가서 사용..
+
+---
+
+## 2. 입출력
+
+- 출력은 print()
+- 프린트문이라고합니다
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+print("Hello, World!")
+```
+
+- ""로 감산 이유는 자료형 때문입니다.
+
+---
+
+## python에는 여러 자료형이 있습니다.
+
+- 숫자형
+- 문자형
+- 리스트
+- 튜플
+- etc..
+
+---
+
+- 숫자형(실수전체집합)
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+print(1,type(1))
+print(1/2,type(1/2))
+print(-1,type(-1))
+```
+
+---
+
+## 연산자
+- 더하기는 +, 빼기는 -, 곱하기는 *, 나누기는 /, 나머지는 %로 씁니다.
+- ex: 10%3==1
+
+- i=i+1을 i+=1로 쓸수있습니다. -,*,/,% 모두 가능합니다.
+
+---
+
+## 논리연산자
+
+- And 연산자 '&'. Python에서는 and 라고 써도 기능합니다.
+ - True & True = True  
+True & False = False  
+False & True = False  
+False & False = False  
+
+- 참을 1로, 거짓을 0으로 생각하고 곱셉을 연상하면 쉽습니다. 
+- a%2==0 & a%3==0 을 만족하는 a는 2와 3의 공배수만입니다.
+
+---
+
+## 논리연산자
+
+- Or 연산자 '|'. 주로 엔터키 위에있는 역슬래쉬( `\` ,₩)에 쉬프트를 누르고 입력할수있습니다.  
+역슬래쉬는 종종 쓸일이 있으니 기억해둡시다.  
+역시 or 이라고만 써도 기능합니다.
+
+- True | True = True  
+True | False = True  
+False | True = True  
+False | False = False
+
+- 덧셈을 연상하면 쉽습니다.
+- a%2==0 or a%3==0 을 만족하는 a는 2의 배수와 3의 배수입니다.
+
+---
+
+## 논리연산자
+
+- not. 부정입니다. 주로 '!',또는 '~' 이라고 씁니다.
+- ! True = False  
+!False = True  
+
+- a != 1 이면 a는 1이 아닌 모든 수입니다.
+
+---
+
+
+- 문자형(String)
+
+  - string을 다룰 때에는 ""를 써줍니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+print("Hello, World!",type("Hello, World"))
+```
+---
+
+- 리스트
+  - 0부터 시작합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+print([0,1,2,3],type([0,1,2,3]))
+print([0,1,2,3][0])
+
+```
+
+- 튜플
+  - 리스트와 유사하지만 값을 바꿀수 없습니다.
+  - 바꿀일이 없는 변수에 사용합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+print((0,1,2,3),type((0,1,2,3)))
+print((0,1,2,3)[0])
+```
+
+---
+
+## 변수선언
+
+- 내가 사용할 값을 변수에 저장..
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+i=1
+s="Hello, World!"
+arr=[0,1,2,3]
+tup=(0,1,2,3)
+
+print(i,type(i))
+print(s,type(s))
+print(arr,type(arr))
+print(tup,type(tup))
+```
+
+- 변수선언에 사용하는 "=" 기호는 수학에서의 등호와 조금 의미가 다릅니다.
+- 수학에서와 같은 등호는 "=="으로 등호를 두개 붙여씁니다.
+- "x=1" 은 x라는 변수에 1이라는 값을 저장하라는 의미입니다.
+- 스트링을 제외하고는 따로 표시해줄필요가 없습니다.
+
+---
+
+## 입력
+
+- input() 으로 입력받습니다.
+- input(int()), input(str()) 등으로 자료형을 지정해줄수 있습니다.
+
+```python
+#| echo: true
+#| output: false
+#| warning: false
+i=input()
+print(i)
+```
+
+---
+
+## 반복문
+
+- for문과 while문 두 종류가 있습니다.
+- 주로 for문을 씁니다.
+
+---
+
+## for문
+- for loop라고 합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(3):
+   print(i)
+```
+
+- i가 range(3) 범위에 있는 만큼 반복하라는 명령입니다.
+- range(3)은 3을 포함하지 않는 0,1,2 까지의 범위입니다.
+
+---
+
+## while문
+- while loop라고합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+i=0
+while(i<3): 
+  print(i)
+  i+=1
+```
+- while(조건) 괄호안의 조건을 만족하면 loop합니다.
+- i+=1의 의미는 i=i+1 이라는 의미이며, -=,*=,/= 모두 사용가능합니다.
+
+-while loop는 for loop에 비해 변수를 복잡하게 통제해야합니다.
+
+---
+
+## 반복문의 중첩
+- 반복문은 중첩해서 사용할수 있습니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(3):
+ for j in range(2):
+    print('i는',i,'j는',j)
+```
+- 관례적으로 i,j,k 순으로 씁니다.
+
+---
+
+- 대표적인 예제로 별찍기 문제가 있습니다.
+
+```{python}
+#| echo: true
+#| outut: true
+#| warning: false
+for i in range(5):
+ for j in range(i+1):
+  print('*',end=" ")
+ print(" ")
+```
+
+---
+
+## 조건문
+
+
+- if문,elif문,else문이 있습니다.
+- 내가 원하는 조건울 만족할때만 실행할수 있게합니다.
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(5):
+ if i==0: print('i가 0이면',i)
+ elif i==1: print('i가 1이면',i)
+ elif i==2: print('i가 3이면',i)
+ elif i==3: print('i가 4이면',i)
+ else: print('i가 4이면',i)
+```
+
+- if는 조건을 만족하는지 묻습니다.
+- elif (else if) 위의 if문의 조건을 만족하지 않았을때 묻습니다.
+- if 문도, elif 문도 통과하지않았다면 나머지를 실행합니다.
+
+---
+
+```{python}
+#| echo: true
+#| output: true
+#| warning: false
+for i in range(5):
+ if i==0: print('i가 0이면',i)
+ if i==1: print('i가 1이면',i)
+ if i==2: print('i가 2이면',i)
+ if i==3: print('i가 3이면',i)
+ if i==4: print('i가 4이면',i)
+```
+
+- 위 루프에서 i가 0이라고 생각해봅시다. 
+i가 0이므로 2행의 명령이 실행됩니다.
+그후 i가 1인지 판단합니다. 1이 아니므로 실행되지않습니다.
+다시 i가 2인지 판단합니다.......
+
+- 이렇게 if문으로만 코딩을하면 루프안의 모든 조건문에서 판단을 해야하므로 
+굉장히 비효율적으로 구동됩니다.
+
+
+---
+
+## 함수
+
+- 코드내에서 자주 쓰는 논리가 있을때 함수로 만들어 놓습니다.  
+코드가 길어질때에는 필수적이라고 할 수 있습니다.
+
+```{python}
+#| echo: True
+#| output: True
+#| warning: False
+def plus(x,y):
+ return x+y
+
+def minus(x,y):
+ print(x-y)
+
+product=lambda x,y : x*y
+
+print(plus(1,2))
+minus(1,2)
+print(product(1,2))
+```
+
+- def 함수이름 (변수):  
+return  
+의 형식으로 씁니다. 값을 반환하지않으면 return하지 않아도 됩니다.
+
+---
+
+## 연습문제
+
+- 피라미드 별찍기를 해봅시다..
+
+```{python}
+#| echo: False
+#| output: True
+#| warning: False
+
+n=5
+for i in range(n):
+ for j in range(4-i):
+  print(' ',end='')
+ for k in range(2*i+1):
+  print('*',end='')
+ print('\n')
+```
+
+---
+
+## 마치며..
+
+-Do it! 점프 투 파이썬을 참조해서 작성했습니다.  
+이 프레젠테이션에 소개되지않은 여러 디테일들을 배울 수 있습니다.
+
+```{python}
+#| echo: True
+#| output: True
+#| warning: False
+
+#print('Hello, World!')
+'''
+abcdefg
+hijklmn
+'''
+print(1+1)
+```
+
+- #과 ''' ... ''' 로 주석을 남길수 있습니다.  
+긴 코드에서 주석은 필수입니다.
+
+- 작성한 코드를 기록해두는것도 중요합니다.  
+주로 github를 사용합니다.
+
+---
+
+
+
+
+
